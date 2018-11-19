@@ -19,23 +19,21 @@ public class FrogSimulation {
         for(int i = 0; i < maxHops; i++)
         {
             d+=hopDistance();
-            if(d > goalDistance)
+            System.out.print(" | " + d + " | ");
+            if(d >= goalDistance)
             {
+                System.out.print("Final Distance Reached | " + d + " | Success");
+                System.out.println();
                 return true;
             }
             else if (d < 0)
             {
+                System.out.print("Final Distance Reached | " + d + " | Failure");
+                System.out.println();
                 return false;
             }
         }
-        if(d < goalDistance)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        return false;
     }
 
     public double runSimulations(int num)
@@ -43,7 +41,6 @@ public class FrogSimulation {
         double yes = 0;
         for(int i = 0; i < num; i++)
         {
-            simulate();
             if(simulate())
             {
                 yes++;
