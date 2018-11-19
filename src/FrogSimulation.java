@@ -49,7 +49,6 @@ public class FrogSimulation {
                 yes++;
             }
         }
-        System.out.println(yes/num);
         return (yes/num);
     }
 }
